@@ -45,7 +45,7 @@ startButton.addEventListener("click", function () {
   startButton.setAttribute("style", "display: none;");
   timerGo();
   answers.setAttribute("style", "display: block;");
-  nextQuestion(0);
+  nextQuestion(questionOn);
 });
 
 buttonA.addEventListener("click", function() {
