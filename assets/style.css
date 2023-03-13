@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+button {
+  max-height: 20px;
+}
