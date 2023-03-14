@@ -6,20 +6,26 @@
     <title>JavaScript Quiz</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
-  <body class="body red">
+  <body>
     <header id="header">
       <h1>JavaScript Quiz</h1>
     </header>
     <main>
+      <form id="initials">
+        <label for="initials">Enter Initials:</label>
+        <input type="text" required minlength="3" maxlength="3" />
+        <button>Submit</button>
+      </form>
       <button id="startbutton">Start</button>
       <h2 id="timer"></h2>
       <p id="question"></p>
       <div id="answers">
-        <button id="answerA"></button>
-        <button id="answerB"></button>
-        <button id="answerC"></button>
-        <button id="answerD"></button>
+        <button id="A"></button>
+        <button id="B"></button>
+        <button id="C"></button>
+        <button id="D"></button>
       </div>
+      <p id="response"></p>
     </main>
     <script src="assets/script.js" />
   </body>
