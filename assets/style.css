@@ -1,4 +1,8 @@
-header {
+body {
+  background-color: cadetblue;
+  color: indigo;
+}
+header h1 {
   display: flex;
   justify-content: center;
 }
@@ -10,6 +14,24 @@ main {
 #initials {
   display: none;
 }
+input {
+  background-color: cornsilk;
+}
 div {
-    display: none;
+  display: none;
+}
+.highscores {
+  list-style-type: none;
+  padding: 2px;
+  margin-bottom: 5px;
+  margin-right: 40px;
+  background-color: black;
+  color: white;
+}
+button {
+  color: rgb(40, 68, 68);
+  background-color: rgb(104, 155, 249);
+}
+#startAgain {
+  display: none;
 }

@@ -1,4 +1,5 @@
 var header = document.getElementById("header");
+var highscoreButton = document.getElementById("viewHighscores");
 var startButton = document.getElementById("startbutton");
 var timer = document.getElementById("timer");
 var question = document.getElementById("question");
@@ -9,14 +10,18 @@ var C = document.getElementById("C");
 var D = document.getElementById("D");
 var response = document.getElementById("response");
 var initials = document.getElementById("initials");
+var highscoreBoard = document.getElementById("highscoreBoard");
+var startAgainButton = document.getElementById("startAgain");
 var timeLeft = 60;
 var questionOn = 0;
 var answerChosen = "";
 var score;
-var highscores = {
-  userInitials: [],
-  userScore: [],
-};
+var highscores = [];
+var savedHighscores = JSON.parse(localStorage.getItem("highscores"));
+if (savedHighscores) {
+  highscores = savedHighscores;
+}
+console.log(highscores);
 var quiz = {
   questions: [
     "Which is a Boolean value?",
@@ -113,7 +118,7 @@ function stopQuiz() {
     timeLeft = 0;
   }
   score = timeLeft;
-  header.children[0].textContent = "Score: " + score;
+  header.textContent = "Score: " + score;
   initials.setAttribute("style", "display: block;");
 }
 
@@ -143,6 +148,22 @@ function nextQuestion(questionNum) {
   D.textContent = quiz.answersD[questionNum];
 }
 
+function viewHighscores() {
+  var scoreList = [];
+  highscoreButton.setAttribute("style", "display: none");
+  header.textContent = "Highscores";
+  startButton.setAttribute("style", "display: none;");
+  sortedHighscores = highscores.sort((s1, s2) => (s1.userScore < s2.userScore) ? 1 : (s1.userScore > s2.userScore) ? -1 : 0);
+  for (var i = 0; i < highscores.length; i++) {
+    scoreList.push((i + 1) + ". " + sortedHighscores[i].userInitials + ": " + highscores[i].userScore);
+    var listEl = document.createElement("li");
+    listEl.textContent = scoreList[i];
+    highscoreBoard.appendChild(listEl);
+    listEl.setAttribute("class", "highscores");
+    startAgainButton.setAttribute("style", "display: block");
+  }
+}
+
 startButton.addEventListener("click", function () {
   startButton.setAttribute("style", "display: none;");
   timerGo();
@@ -156,10 +177,15 @@ answers.addEventListener("click", function (event) {
   nextQuestion(questionOn);
 });
 
+highscoreButton.addEventListener("click", viewHighscores);
+
 initials.children[2].addEventListener("click", function (event) {
   event.preventDefault();
-  highscores.userInitials = highscores.userInitials.push(initials.children[1].value);
-  highscores.userScore = highscores.userScore.push(score);
+  var userStats = {
+    userInitials: initials.children[1].value, userScore: score,
+  }
+  highscores.push(userStats);
   localStorage.setItem("highscores", JSON.stringify(highscores));
   initials.setAttribute("style", "display: none;");
+  viewHighscores();
 });

@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <header id="header">
-      <h1>JavaScript Quiz</h1>
+    <header>
+      <button id="viewHighscores">View Highscores</button>
+      <h1 id="header">JavaScript Quiz</h1>
     </header>
     <main>
       <form id="initials">
         <label for="initials">Enter Initials:</label>
-        <input type="text" required minlength="3" maxlength="3" />
+        <input
+          type="text"
+          required
+          minlength="3"
+          maxlength="3"
+          placeholder="initials"
+        />
         <button>Submit</button>
       </form>
       <button id="startbutton">Start</button>
@@ -26,6 +33,10 @@
         <button id="D"></button>
       </div>
       <p id="response"></p>
+      <ul id="highscoreBoard"></ul>
+      <form>
+        <button id="startAgain">Home Page</button>
+      </form>
     </main>
     <script src="assets/script.js" />
   </body>
