@@ -8,7 +8,7 @@ A JavaScript quiz that can test one's knoweledge. I made this quiz to help mysel
 
 ## Accessing the Website
 
-Click [here]() to access the website.
+Click [here](https://kernel02.github.io/challenge-4-code-quiz/) to access the website.
 
 ## Usage
 
