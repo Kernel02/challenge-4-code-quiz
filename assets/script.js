@@ -149,7 +149,7 @@ function nextQuestion(questionNum) {
   C.textContent = quiz.answersC[questionNum];
   D.textContent = quiz.answersD[questionNum];
 }
-//Reveals our Home Page and Clear Highscores buttons. Uses a for loop to run through the array of scores and display them sorted on the screen
+//Reveals our Home Page and Clear Highscores buttons. Uses a for loop to run through the array of scores and display them sorted on the screen.
 function viewHighscores() {
   var scoreList = [];
   highscoreButton.setAttribute("style", "display: none");
