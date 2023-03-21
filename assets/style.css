@@ -11,27 +11,22 @@ main {
   flex-direction: column;
   align-items: center;
 }
-#initials {
+#initials, #startAgain, #clear, div{
   display: none;
 }
 input {
   background-color: cornsilk;
-}
-div {
-  display: none;
 }
 .highscores {
   list-style-type: none;
   padding: 2px;
   margin-bottom: 5px;
   margin-right: 40px;
-  background-color: black;
-  color: white;
+  background-color: rgb(40, 68, 68);
+  color: rgb(104, 155, 249);
 }
 button {
   color: rgb(40, 68, 68);
   background-color: rgb(104, 155, 249);
-}
-#startAgain {
-  display: none;
+  margin-bottom: 5px;
 }
