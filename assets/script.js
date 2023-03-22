@@ -95,6 +95,7 @@ function timerGo() {
     timer.textContent = timeLeft + " seconds left";
     if (timeLeft === 0 || timeLeft < 0) {
       clearInterval(timerRun);
+      stopQuiz();
     } else if (score > timeLeft) {
       clearInterval(timerRun);
     }
